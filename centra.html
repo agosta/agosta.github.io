@@ -160,7 +160,7 @@ function change_with_alert(fromItem, toItem)
 <p class="content">Gentile signora,</p>
 <p class="content">il test che sta per compilare riguarda la violenza economica, cioè quel tipo di violenza (che spesso non è nemmeno percepita come tale) che riguarda il controllo del denaro, della situazione economica della famiglia, delle carte bancarie, di eventuali investimenti o speculazioni, ma anche lo sfruttamento del reddito prodotto da una donna da parte del partner.</p>
 <p class="content">L’obiettivo di questo test è offrirle una valutazione molto generale della situazione che Lei vive, rispetto alle donne che hanno partecipato al nostro progetto di ricerca e hanno compilato un questionario analogo. Per posizionare correttamente le Sue risposte, le faremo alcune domande generali iniziali, perché abbiamo bisogno di confrontarla con donne simili a Lei tra quelle che hanno risposto in precedenza alle nostre domande.</p>
-<p class="content">La maggior parte delle domande è stata messa a punto da alcune studiose nel 2008, e costituisce la scala di abuso economico di Adams, Sullivan, Bybee e Greeson. Nell’ambito del nostro progetto, abbiamo aggiunto alcune domande che ci sembravano necessarie, e che non erano comprese nella scala originaria. La scala di abuso economico è uno strumento di rilevazione scientifico, che è stato validato e pubblicato, ed è usato in molti paesi per conoscere la diffusione di questo fenomeno.</p>
+<p class="content">La maggior parte delle domande è stata messa a punto da alcune studiose nel 2008, e costituisce la scala di abuso economico di Adams, Sullivan, Bybee e Greeson. La scala di abuso economico è uno strumento di rilevazione scientifico, che è stato validato e pubblicato, ed è usato in molti paesi per conoscere la diffusione di questo fenomeno.</p>
 <p class="content">La ringraziamo molto per la Sua partecipazione a questa azione del progetto CENTRA – Il Controllo Economico Non Ti Rende Autonoma.</p>
 <p class="content">Il <em>team</em> di ricerca del progetto CENTRA</p>
 <p class="content"><em>Il progetto CENTRA è stato finanziato dal Dipartimento Pari Opportunità della Presidenza del Consiglio dei Ministri ed è stato svolto da tre enti: SVSeD dell’Ospedale Policlinico di Milano; Centro Genders dell’Università degli Studi di Milano; SVS-Donna Aiuta Donna Onlus.</em></p>
@@ -189,7 +189,7 @@ function change_with_alert(fromItem, toItem)
 <div id="filtro:B" style="visibility:hidden; display:none" class="card-content">
 <div class="control field m-t-md radio-buttons-as-buttons">
 <p>E’ separata, oppure ha interrotto una relazione, anche senza convivenza, negli ultimi 5 anni?</p></li>
-<label class="button"><input type="radio" name="B" value="Sì" onclick="change_with_alert('filtro','parte:D');">Sì</label>
+<label class="button"><input type="radio" name="B" value="Sì" onclick="change_with_alert('filtro','parte:N:1');">Sì</label>
 <label class="button"><input type="radio" name="B" value="No" onclick="change('filtro','fine');">No</label>  <!-- Fine -->
 </div>
 <!-- p>[ESCE DAL QUESTIONARIO]</p -->
@@ -197,14 +197,15 @@ function change_with_alert(fromItem, toItem)
 <div id="filtro:C" style="visibility:hidden; display:none" class="card-content">
 <div class="control field m-t-md radio-buttons-as-buttons">
 <p class="content">Ha mai avuto esperienze di violenza (di qualsiasi tipo: fisica, psicologica, sessuale, economica) nei Suoi confronti, nella Sua attuale relazione/convivenza/matrimonio?</p>
-<label class="button"><input type="radio" name="C" value="Sì" onclick="change('filtro','parte:D');">Sì</label>
-<label class="button"><input type="radio" name="C" value="No" onclick="change('filtro','parte:D');">No</label>
+<label class="button"><input type="radio" name="C" value="Sì" onclick="change('filtro','parte:N:1');">Sì</label>
+<label class="button"><input type="radio" name="C" value="No" onclick="change('filtro','parte:N:1');">No</label>
 </div>
 </div>
 <!-- p>[PROSEGUE CON IL QUESTIONARIO]</p -->
 </div>
 
 <!-- p>[DA QUI INIZIA IL QUESTIONARIO]</p -->
+<!-- Parte D rimossa 
 <div id="parte:D" style="visibility:hidden; display:none" class="card">
 <div class="card-header">
 	<p class="card-header-title">Progetto C.E.N.T.R.A.</p>
@@ -317,6 +318,7 @@ function change_with_alert(fromItem, toItem)
 </div>
 </div>
 </div>
+-->
 
 <div id="parte:N:1" style="visibility:hidden; display:none" class="card">
 <div class="card-header">
@@ -328,13 +330,13 @@ function change_with_alert(fromItem, toItem)
 <!-- p>[PUOI DECIDERE SE METTERE TUTTO IL TESTO CHE SEGUE SU UN’UNICA PAGINA A SCORRIMENTO, OPPURE SE SUDDIVIDERLO IN PARTI, O ANCORA SE PRESENTARE UNO SCHERMO PER OGNI DOMANDA]</p -->
 <!-- p>[LE DOMANDE EVIDENZIATE IN GIALLO APPARTENGONO ALLA DIMENSIONE DEL CONTROLLO, QUELLE IN AZZURRO ALLA DIMENSIONE DELLO SFRUTTAMENTO. LO SEGNALO PER IL CALCOLO DEI PUNTEGGI, MA LA SUDDIVISIONE NON DEVE APPARIRE A CHI COMPILA, E LE DOMANDE DEVONO ESSERE PROPOSTE SEMPRE IN QUEST’ORDINE]</p -->
 <div id="parte:N:info" class="card-content">
-<p class="content">Ora Le chiediamo di considerare i comportamenti elencati qui di seguito. Si tratta di cose che alcuni uomini fanno o possono fare per mettere in difficoltà la moglie/compagna/fidanzata. </p>
+<p class="content">Le chiediamo di considerare i comportamenti elencati qui di seguito. Si tratta di cose che alcuni uomini fanno o possono fare per mettere in difficoltà la moglie/compagna/fidanzata. </p>
 <p class="content">Potrebbe per favore dirmi, per quanto ricorda, se e quanto spesso il Suo partner o ex partner ha fatto ciascuna delle cose elencate, a partire da quando è iniziata la vostra relazione, e anche se non vivevate insieme?</p>
 <p class="content">Le chiediamo gentilmente di scegliere una sola risposta per ogni domanda; può rispondere “mai” se il Suo partner non ha mai fatto quanto elencato qui sotto.</p>
 </div>
 
 <div class="card-content">
-<div id="N1">
+<div id="N1"  class="control field m-t-md radio-buttons-as-buttons">
 <label class="label">N 1. Rubare o prendere le chiavi dell’auto per impedirLe di andare a cercare un lavoro, o a un colloquio di lavoro</label>
   <label class="button"><input type="radio" name="N1" value="1">Mai</label>
   <label class="button"><input type="radio" name="N1" value="2">Raramente</label>
@@ -345,7 +347,7 @@ function change_with_alert(fromItem, toItem)
   <label class="button"><input type="radio" name="N1" value="NA">Non avevo un'auto</label>
 </div>
 
-<div id="N2">
+<div id="N2"  class="control field m-t-md radio-buttons-as-buttons">
 <label class="label">N 2. Fare in modo di impedirLe di andare al lavoro</label>
   <label class="button"><input type="radio" name="N2" value="1">Mai</label>
   <label class="button"><input type="radio" name="N2" value="2">Raramente</label>
@@ -356,7 +358,7 @@ function change_with_alert(fromItem, toItem)
   <label class="button"><input type="radio" name="N2" value="NA">Non avevo un lavoro</label>
 </div>
 
-<div id="N3">
+<div id="N3" class="control field m-t-md radio-buttons-as-buttons">
 <label class="label">N 3. Picchiarla se Lei diceva che aveva bisogno di trovare un lavoro</label>
   <label class="button"><input type="radio" name="N3" value="1">Mai</label>
   <label class="button"><input type="radio" name="N3" value="2">Raramente</label>
@@ -366,7 +368,7 @@ function change_with_alert(fromItem, toItem)
   <label class="button"><input type="radio" name="N3" value="NA">Non ricordo</label>
 </div>
 
-<div id="N4">
+<div id="N4" class="control field m-t-md radio-buttons-as-buttons">
 <label class="label">N 4. Minacciare di costringerLa a lasciare il lavoro</label>
   <label class="button"><input type="radio" name="N4" value="1">Mai</label>
   <label class="button"><input type="radio" name="N4" value="2">Raramente</label>
@@ -377,7 +379,7 @@ function change_with_alert(fromItem, toItem)
   <label class="button"><input type="radio" name="N4" value="NA">Non avevo un lavoro</label>
 </div>
 
-<div id="N5">
+<div id="N5" class="control field m-t-md radio-buttons-as-buttons">
 <label class="label">N 5. Pretendere che lasciasse il lavoro</label>
   <label class="button"><input type="radio" name="N5" value="1">Mai</label>
   <label class="button"><input type="radio" name="N5" value="2">Raramente</label>
@@ -388,7 +390,7 @@ function change_with_alert(fromItem, toItem)
   <label class="button"><input type="radio" name="N5" value="NA">Non avevo un lavoro</label>
 </div>
 
-<div id="N6">
+<div id="N6" class="control field m-t-md radio-buttons-as-buttons">
 <label class="label">N 6. Fare in modo che Lei dovesse chiedergli soldi</label>
   <label class="button"><input type="radio" name="N6" value="1">Mai</label>
   <label class="button"><input type="radio" name="N6" value="2">Raramente</label>
@@ -398,7 +400,7 @@ function change_with_alert(fromItem, toItem)
   <label class="button"><input type="radio" name="N6" value="NA">Non ricordo</label>
 </div>
 
-<div id="N7">
+<div id="N7" class="control field m-t-md radio-buttons-as-buttons">
 <label class="label">N 7. Prendere soldi dalla Sua borsa, portafoglio o conto in banca senza chiedere il Suo permesso</label>
   <label class="button"><input type="radio" name="N7" value="1">Mai</label>
   <label class="button"><input type="radio" name="N7" value="2">Raramente</label>
@@ -408,7 +410,7 @@ function change_with_alert(fromItem, toItem)
   <label class="button"><input type="radio" name="N7" value="NA">Non ricordo</label>
 </div>
 
-<div id="N8">
+<div id="N8" class="control field m-t-md radio-buttons-as-buttons">
 <label class="label">N 8. ObbligarLa a dargli soldi, o far usare a Lei il suo bancomat, carta di credito, assegni, etc.</label>
   <label class="button"><input type="radio" name="N8" value="1">Mai</label>
   <label class="button"><input type="radio" name="N8" value="2">Raramente</label>
@@ -418,7 +420,7 @@ function change_with_alert(fromItem, toItem)
   <label class="button"><input type="radio" name="N8" value="NA">Non ricordo</label>
 </div>
 
-<div id="N9">
+<div id="N9" class="control field m-t-md radio-buttons-as-buttons">
 <label class="label">N 9. Rubare cose di Sua proprietà </label>
   <label class="button"><input type="radio" name="N9" value="1">Mai</label>
   <label class="button"><input type="radio" name="N9" value="2">Raramente</label>
@@ -450,7 +452,7 @@ function change_with_alert(fromItem, toItem)
 </div>
 
 <div class="card-content">
-<div id="N10">
+<div id="N10" class="control field m-t-md radio-buttons-as-buttons">
 <label class="label">N 10. Fare in modo di impedirle di avere dei soldi Suoi, personali</label>
   <label class="button"><input type="radio" name="N10" value="1">Mai</label>
   <label class="button"><input type="radio" name="N10" value="2">Raramente</label>
@@ -460,7 +462,7 @@ function change_with_alert(fromItem, toItem)
   <label class="button"><input type="radio" name="N10" value="NA">Non ricordo</label>
 </div>
 
-<div id="N11">
+<div id="N11" class="control field m-t-md radio-buttons-as-buttons">
 <label class="label">N 11. ObbligarLa a dargli i soldi dello stipendio (o dell’assistenza sociale, o dell’invalidità, o di altre forme di supporto economico)</label>
   <label class="button"><input type="radio" name="N11" value="1">Mai</label>
   <label class="button"><input type="radio" name="N11" value="2">Raramente</label>
@@ -471,7 +473,7 @@ function change_with_alert(fromItem, toItem)
   <label class="button"><input type="radio" name="N11" value="NA">Non avevo soldi miei</label>
 </div>
 
-<div id="N12">
+<div id="N12" class="control field m-t-md radio-buttons-as-buttons">
 <label class="label">N 12. Decidere come Lei doveva spendere i soldi, anziché lasciarglieli spendere come Lei pensava fosse necessario</label>
   <label class="button"><input type="radio" name="N12" value="1">Mai</label>
   <label class="button"><input type="radio" name="N12" value="2">Raramente</label>
@@ -481,7 +483,7 @@ function change_with_alert(fromItem, toItem)
   <label class="button"><input type="radio" name="N12" value="NA">Non ricordo</label>
 </div>
 
-<div id="N13">
+<div id="N13" class="control field m-t-md radio-buttons-as-buttons">
 <label class="label">N 13. Pretendere di sapere come Lei aveva speso il denaro</label>
   <label class="button"><input type="radio" name="N13" value="1">Mai</label>
   <label class="button"><input type="radio" name="N13" value="2">Raramente</label>
@@ -491,7 +493,7 @@ function change_with_alert(fromItem, toItem)
   <label class="button"><input type="radio" name="N13" value="NA">Non ricordo</label>
 </div>
 
-<div id="N14">
+<div id="N14" class="control field m-t-md radio-buttons-as-buttons">
 <label class="label">N 14. Pretendere di avere le ricevute o gli scontrini di ciò che aveva acquistato</label>
   <label class="button"><input type="radio" name="N14" value="1">Mai</label>
   <label class="button"><input type="radio" name="N14" value="2">Raramente</label>
@@ -501,7 +503,7 @@ function change_with_alert(fromItem, toItem)
   <label class="button"><input type="radio" name="N14" value="NA">Non ricordo</label>
 </div>
 
-<div id="N15">
+<div id="N15" class="control field m-t-md radio-buttons-as-buttons">
 <label class="label">N 15. Impedirle di avere i soldi necessari per fare la spesa, per i vestiti, o per altre necessità</label>
   <label class="button"><input type="radio" name="N15" value="1">Mai</label>
   <label class="button"><input type="radio" name="N15" value="2">Raramente</label>
@@ -511,7 +513,7 @@ function change_with_alert(fromItem, toItem)
   <label class="button"><input type="radio" name="N15" value="NA">Non ricordo</label>
 </div>
 
-<div id="N16">
+<div id="N16" class="control field m-t-md radio-buttons-as-buttons">
 <label class="label">N 16. Nascondere il denaro per non farglielo trovare</label>
   <label class="button"><input type="radio" name="N16" value="1">Mai</label>
   <label class="button"><input type="radio" name="N16" value="2">Raramente</label>
@@ -521,7 +523,7 @@ function change_with_alert(fromItem, toItem)
   <label class="button"><input type="radio" name="N16" value="NA">Non ricordo</label>
 </div>
 
-<div id="N17">
+<div id="N17" class="control field m-t-md radio-buttons-as-buttons">
 <label class="label">N 17. Giocare d’azzardo con i soldi Suoi o della famiglia</label>
   <label class="button"><input type="radio" name="N17" value="1">Mai</label>
   <label class="button"><input type="radio" name="N17" value="2">Raramente</label>
@@ -531,7 +533,7 @@ function change_with_alert(fromItem, toItem)
   <label class="button"><input type="radio" name="N17" value="NA">Non ricordo</label>
 </div>
 
-<div id="N18">
+<div id="N18" class="control field m-t-md radio-buttons-as-buttons">
 <label class="label">N 18. FarLe chiedere soldi a familiari o amici e impedirLe di restituirli</label>
   <label class="button"><input type="radio" name="N18" value="1">Mai</label>
   <label class="button"><input type="radio" name="N18" value="2">Raramente</label>
@@ -563,7 +565,7 @@ function change_with_alert(fromItem, toItem)
 </div>
 
 <div class="card-content">
-<div id="N19">
+<div id="N19" class="control field m-t-md radio-buttons-as-buttons">
 <label class="label">N 19. ConvincerLa a prestargli soldi senza poi restituirli</label>
   <label class="button"><input type="radio" name="N19" value="1">Mai</label>
   <label class="button"><input type="radio" name="N19" value="2">Raramente</label>
@@ -574,7 +576,7 @@ function change_with_alert(fromItem, toItem)
   <label class="button"><input type="radio" name="N19" value="NA">Non avevo soldi miei</label>
 </div>
 
-<div id="N20">
+<div id="N20" class="control field m-t-md radio-buttons-as-buttons">
 <label class="label">N 20. ImpedirLe di avere accesso al conto in banca o postale</label>
   <label class="button"><input type="radio" name="N20" value="1">Mai</label>
   <label class="button"><input type="radio" name="N20" value="2">Raramente</label>
@@ -584,7 +586,7 @@ function change_with_alert(fromItem, toItem)
   <label class="button"><input type="radio" name="N20" value="NA">Non ricordo</label>
 </div>
 
-<div id="N21">
+<div id="N21" class="control field m-t-md radio-buttons-as-buttons">
 <label class="label">N 21. NasconderLe la situazione finanziaria della famiglia</label>
   <label class="button"><input type="radio" name="N21" value="1">Mai</label>
   <label class="button"><input type="radio" name="N21" value="2">Raramente</label>
@@ -594,7 +596,7 @@ function change_with_alert(fromItem, toItem)
   <label class="button"><input type="radio" name="N21" value="NA">Non ricordo</label>
 </div>
 
-<div id="N22">
+<div id="N22" class="control field m-t-md radio-buttons-as-buttons">
 <label class="label">N 22. Prendere importanti decisioni finanziarie senza parlarne prima con Lei</label>
   <label class="button"><input type="radio" name="N22" value="1">Mai</label>
   <label class="button"><input type="radio" name="N22" value="2">Raramente</label>
@@ -604,7 +606,7 @@ function change_with_alert(fromItem, toItem)
   <label class="button"><input type="radio" name="N22" value="NA">Non ricordo</label>
 </div>
 
-<div id="N23">
+<div id="N23" class="control field m-t-md radio-buttons-as-buttons">
 <label class="label">N 23. MinacciarLa o picchiarLa per aver pagato le bollette o per aver comprato cose necessarie</label>
   <label class="button"><input type="radio" name="N23" value="1">Mai</label>
   <label class="button"><input type="radio" name="N23" value="2">Raramente</label>
@@ -614,7 +616,7 @@ function change_with_alert(fromItem, toItem)
   <label class="button"><input type="radio" name="N23" value="NA">Non ricordo</label>
 </div>
 
-<div id="N24">
+<div id="N24" class="control field m-t-md radio-buttons-as-buttons">
 <label class="label">N 24. Spendere tutto il denaro di cui Lei aveva bisogno per pagare bollette, affitto, etc.</label>
   <label class="button"><input type="radio" name="N24" value="1">Mai</label>
   <label class="button"><input type="radio" name="N24" value="2">Raramente</label>
@@ -624,7 +626,7 @@ function change_with_alert(fromItem, toItem)
   <label class="button"><input type="radio" name="N24" value="NA">Non ricordo</label>
 </div>
 
-<div id="N25">
+<div id="N25" class="control field m-t-md radio-buttons-as-buttons">
 <label class="label">N 25. Pagare le bollette in ritardo, o non pagarle affatto</label>
   <label class="button"><input type="radio" name="N25" value="1">Mai</label>
   <label class="button"><input type="radio" name="N25" value="2">Raramente</label>
@@ -634,7 +636,7 @@ function change_with_alert(fromItem, toItem)
   <label class="button"><input type="radio" name="N25" value="NA">Non ricordo</label>
 </div>
 
-<div id="N26">
+<div id="N26" class="control field m-t-md radio-buttons-as-buttons">
 <label class="label">N 26. FarLa indebitare (ad esempio, obbligarLa a usare la Sua carta di credito per spese che Lei non voleva fare)</label>
   <label class="button"><input type="radio" name="N26" value="1">Mai</label>
   <label class="button"><input type="radio" name="N26" value="2">Raramente</label>
@@ -644,7 +646,7 @@ function change_with_alert(fromItem, toItem)
   <label class="button"><input type="radio" name="N26" value="NA">Non ricordo</label>
 </div>
 
-<div id="N27">
+<div id="N27" class="control field m-t-md radio-buttons-as-buttons">
 <label class="label">N 27. Rifiutare di trovare un lavoro per se stesso, così che Lei dovesse sostenere da sola la famiglia</label>
   <label class="button"><input type="radio" name="N27" value="1">Mai</label>
   <label class="button"><input type="radio" name="N27" value="2">Raramente</label>
@@ -654,7 +656,7 @@ function change_with_alert(fromItem, toItem)
   <label class="button"><input type="radio" name="N27" value="NA">Non ricordo</label>
 </div>
 
-<div id="N28">
+<div id="N28" class="control field m-t-md radio-buttons-as-buttons">
 <label class="label">N 28. Ipotecare le Sue proprietà o quelle di tutti e due</label>
   <label class="button"><input type="radio" name="N28" value="1">Mai</label>
   <label class="button"><input type="radio" name="N28" value="2">Raramente</label>
@@ -716,49 +718,11 @@ compute zzSCALA=(trunc(10*((15*zSCALA)+50)) )/10</p></li>
 <div class="card-content">
 <header class="title">Progetto C.E.N.T.R.A.</header>
 <header class="subtitle">il Controllo Non Ti Rende liberA</header>
-<p class="content">Introduzione ai risultati</p>
-<label class="label">Risultato</label>
-<table class="table">
-<tr><td>Risultato complessivo   </td><td id="somma"  >NA</td></tr>
-<tr><td>Dimensione controllo    </td><td id="giallo" >NA</td></tr>
-<tr><td>Dimensione sfruttamento </td><td id="azzurro">NA</td></tr>
-</table>
+<p>Grazie per aver completato il questionario.</p>
+<p>Il Suo punteggio, basato sulle Sue risposte, è indicato qui sotto. Il punteggio più alto ottenibile (che corrisponde alla risposta “Molto spesso” a tutte le domande) è 100, quello più basso (che corrisponde alla risposta “Mai” a tutte le domande) è zero. Raramente si ottengono questi punteggi, perché indicano situazioni estreme (assolutamente nessuna violenza economica, oppure il massimo della violenza economica). 
+Il punteggio medio delle donne che hanno o hanno avuto una relazione violenta, e che hanno partecipato in precedenza al nostro studio, è <strong>17</strong>. Il punteggio delle donne che non hanno, o non hanno avuto, una relazione violenta, sempre nel nostro precedente studio, è <strong>1</strong>.</p>
+<p>Il suo punteggio è: <strong><span id="somma"  >NA</span></strong></p>
 
-<label class="label">MEDIE DELLA SCALA CON ITEMS D+N E DUE SOTTO-SCALE (VERSIONE CENTRATA SULLA MEDIA) NEI QUATTRO SOTTOGRUPPI DEL CAMPIONE:</label>
-<table class="table">
-<tbody>
-<tr class="odd">
-<td></td>
-<td>SCALA INTERA</td>
-<td>SOLO DIMENSIONE DEL CONTROLLO</td>
-<td>SOLO DIMENSIONE DELLO SFRUTTAMENTO</td>
-</tr>
-<tr class="even">
-<td>1 Separazione Relazione Violenta</td>
-<td>54.9</td>
-<td>29.5</td>
-<td>25.0</td>
-</tr>
-<tr class="odd">
-<td>2 Non Separate Relazione Violenta</td>
-<td>46.2</td>
-<td>17.3</td>
-<td>12.2</td>
-</tr>
-<tr class="even">
-<td>3 Separazione Relazione Non Violenta</td>
-<td>39.0</td>
-<td>4.3</td>
-<td>3.8</td>
-</tr>
-<tr class="odd">
-<td>4 Non Separate Relazione Non Violenta</td>
-<td>37.0</td>
-<td>1.7</td>
-<td>1.9</td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 
