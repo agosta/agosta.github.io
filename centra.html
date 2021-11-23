@@ -5,14 +5,57 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://bulma.io/vendor/fontawesome-free-5.15.2-web/css/all.min.css">
 	<link rel="stylesheet" href="./centra.css">
-
+	<script src="https://cdn.jsdelivr.net/npm/d3@6"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.1"></script>
 <script type="text/javascript">
+function graph(value)
+{
+var data = [
+{"Punteggio" :1,    "%":57.4, 	"casi":230},
+{"Punteggio" :2.0,  "%":8.5, 	"casi":34},
+{"Punteggio" :3.0,  "%":5.7, 	"casi":23},
+{"Punteggio" :6.0,  "%":9.7, 	"casi":39},
+{"Punteggio" :20.0, "%":9.5, 	"casi":38},
+{"Punteggio" :21.0, "%":0.5, 	"casi":2},
+{"Punteggio" :25.0, "%":0.7, 	"casi":3},
+{"Punteggio" :26.0, "%":1.0, 	"casi":4},
+{"Punteggio" :30.0, "%":1.0, 	"casi":4},
+{"Punteggio" :35.0, "%":1.0, 	"casi":4},
+{"Punteggio" :41.0, "%":1.2, 	"casi":5},
+{"Punteggio" :44.0, "%":0.7, 	"casi":3},
+{"Punteggio" :55.0, "%":1.0, 	"casi":4},
+{"Punteggio" :74.0, "%":1.0, 	"casi":4},
+{"Punteggio" :100,  "%":1.0, 	"casi":4}
+];
+
+data.columns=["Punteggio", "%", "casi" ];
+
+var the_plot = Plot.plot({
+  marks: [
+    Plot.barY(data, {x: "Punteggio", y: "%"}),
+    Plot.ruleY([0]),
+    Plot.dot([{ "Punteggio" : Math.trunc(value), "%" : 5, "radius" : 10 }], {x : "Punteggio", y : "%", r :"radius", fill: "red"}),
+  ]
+});
+
+document.getElementById("plot").appendChild(the_plot);
+}
+
 function change(fromItem, toItem)
 {
 document.getElementById(fromItem).style.visibility="hidden";
 document.getElementById(fromItem).style.display="none";
 document.getElementById(toItem).style.visibility="visible";
 document.getElementById(toItem).style.display="block";
+if (fromItem=="filtro:A") {
+	var input_tags = document.getElementsByTagName("input");
+	for ( var i = 0; i < input_tags.length; i++ ) {
+		var e = input_tags[i];
+		if (e.checked) {
+			e.value="NA";
+		}
+	}
+}
 if (toItem=="fine:risultato") {
 	var dati = [];
 	var input_tags = document.getElementsByTagName("input");
@@ -31,14 +74,25 @@ if (toItem=="fine:risultato") {
 				} else if (lista_azzurri.includes(e.name)) {
 					azzurri+=parseInt(e.value);
 				}
+			} else {
+				somma+=1;
 			}
 			dati.push(encodeURIComponent(e.name) + "=" + encodeURIComponent(e.value));
 		}
 	}
+	console.log(somma);
+	if (somma<28) somma=28;
+	var punt  = (somma-28)*100;
+	var puntnorm = punt/(140-28);
+	console.log(puntnorm);
+	document.getElementById("somma").innerHTML = puntnorm;
+	graph(puntnorm);
+
+/*
 	var zScala  = (somma-61.04)/25.44;
 	var zzScala = Math.trunc(10*((15*zScala)+50))/10;
 	console.log(zzScala);
-	document.getElementById("somma").innerHTML = zzScala;
+	document.getElementById("somma").innerHTML = zzScala; 
 
 	var zScala_g  = (gialli-61.04)/25.44;
 	var zzScala_g = Math.trunc(10*((15*zScala_g)+50))/10;
@@ -50,6 +104,7 @@ if (toItem=="fine:risultato") {
 	console.log(zzScala_a);
 	document.getElementById("azzurro").innerHTML = zzScala_a;
 	console.log(document.getElementById("azzurro").innerHTML)
+*/
 }
 }
 
@@ -722,7 +777,9 @@ compute zzSCALA=(trunc(10*((15*zSCALA)+50)) )/10</p></li>
 <p>Il Suo punteggio, basato sulle Sue risposte, è indicato qui sotto. Il punteggio più alto ottenibile (che corrisponde alla risposta “Molto spesso” a tutte le domande) è 100, quello più basso (che corrisponde alla risposta “Mai” a tutte le domande) è zero. Raramente si ottengono questi punteggi, perché indicano situazioni estreme (assolutamente nessuna violenza economica, oppure il massimo della violenza economica). 
 Il punteggio medio delle donne che hanno o hanno avuto una relazione violenta, e che hanno partecipato in precedenza al nostro studio, è <strong>17</strong>. Il punteggio delle donne che non hanno, o non hanno avuto, una relazione violenta, sempre nel nostro precedente studio, è <strong>1</strong>.</p>
 <p>Il suo punteggio è: <strong><span id="somma"  >NA</span></strong></p>
-
+<p>
+<div id="plot"></div>
+</p>
 </div>
 </div>
 
